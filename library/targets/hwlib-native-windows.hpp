@@ -20,71 +20,70 @@
 #include HWLIB_INCLUDE( ../hwlib-all.hpp )
 #include <iostream>
 #include <Windows.h>
-#include <SFML/Graphics.hpp>
 
 namespace hwlib {
 	
 namespace target {
    
-class window : public hwlib::window {
-private:
+// class window : public hwlib::window {
+// private:
 
-   int m;
-   sf::RenderWindow w;
-   sf::Image image;
+//    int m;
+//    sf::RenderWindow w;
+//    sf::Image image;
    
-public:   
+// public:   
 
-   window( xy size, int m = 5 ):
-      hwlib::window( size ),
-      m( m ),
-      w( sf::VideoMode( m * size.x, m * size.y ), "HWLIB-SFML window" )
-   {
-      image.create( m * size.x, m * size.y );
-      clear();
-      flush();
-   }	
+//    window( xy size, int m = 5 ):
+//       hwlib::window( size ),
+//       m( m ),
+//       w( sf::VideoMode( m * size.x, m * size.y ), "HWLIB-SFML window" )
+//    {
+//       image.create( m * size.x, m * size.y );
+//       clear();
+//       flush();
+//    }	
    
-   window( int x, int y, int m = 5 ): window( xy( x, y ), m ){}	
+//    window( int x, int y, int m = 5 ): window( xy( x, y ), m ){}	
    
-   void poll(){
-      if ( w.isOpen() ){
-        sf::Event event;
-        while (w.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                w.close();
-        }
-      }	   
-   }
+//    void poll(){
+//       if ( w.isOpen() ){
+//         sf::Event event;
+//         while (w.pollEvent(event))
+//         {
+//             if (event.type == sf::Event::Closed)
+//                 w.close();
+//         }
+//       }	   
+//    }
    
-   void write_implementation( 
-      xy pos, 
-      color col
-   ) override {
-      for( int x = 0; x < m; ++x ){
-         for( int y = 0; y < m; ++y ){
-            image.setPixel( 
-               x + m * pos.x, y + m * pos.y, 
-               ( col != hwlib::black ) ? sf::Color::Black : sf::Color::White );
-         }
-      }   
-   }
+//    void write_implementation( 
+//       xy pos, 
+//       color col
+//    ) override {
+//       for( int x = 0; x < m; ++x ){
+//          for( int y = 0; y < m; ++y ){
+//             image.setPixel( 
+//                x + m * pos.x, y + m * pos.y, 
+//                ( col != hwlib::black ) ? sf::Color::Black : sf::Color::White );
+//          }
+//       }   
+//    }
    
-   void flush() override {
-	   w.clear();
+//    void flush() override {
+// 	   w.clear();
       
-sf::Texture texture;
-texture.loadFromImage(image);
-sf::Sprite sprite;
-sprite.setTexture(texture, true);
-w.draw(sprite);      
+// sf::Texture texture;
+// texture.loadFromImage(image);
+// sf::Sprite sprite;
+// sprite.setTexture(texture, true);
+// w.draw(sprite);      
       
-      w.display();
-	   poll();
-   }
+//       w.display();
+// 	   poll();
+//    }
    
-}; // class window
+// }; // class window
 	
 };	// namespace target
 

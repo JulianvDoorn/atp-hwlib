@@ -77,7 +77,7 @@
 
 #ifdef HWLIB_TARGET_pyd
    #define HWLIB_TARGET
-   #include HWLIB_INCLUDE( targets/hwlib-native.hpp )
+   #include HWLIB_INCLUDE( targets/hwlib-native-windows.hpp )
 #endif
 
 #ifndef HWLIB_TARGET

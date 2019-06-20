@@ -79,7 +79,6 @@
 #include HWLIB_INCLUDE( graphics/hwlib-graphics-window-demos.hpp )
 #include HWLIB_INCLUDE( graphics/hwlib-graphics-window-terminal.hpp )
 #include HWLIB_INCLUDE( graphics/hwlib-graphics-font-8x8.hpp )
-#include HWLIB_INCLUDE( graphics/hwlib-graphics-font-16x16.hpp )
 
 #include HWLIB_INCLUDE( peripherals/hwlib-pcf8574.hpp )
 #include HWLIB_INCLUDE( peripherals/hwlib-pcf8591.hpp )
